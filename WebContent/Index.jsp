@@ -7,11 +7,42 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+
+	<form action="testRequestMappingController/updataUser">
+	<input type="hidden" name="id" value="1">
+	name: <input type="text" name="name" value="${user.name}">
+	username: <input type="text" name="username" value="${user.username }">
+	password: <input type="text" name="namepassword" value="${user.password }">
 	
-	<!--  -->
+	<button type="submit">提交</button>
+	
+	
+	</form>
+
+
+
+
+
+
+
+	<!-- 测试testSessionAttribute -->
+	<a href="testRequestMappingController/testSessionAttribute">testSessionAttribute</a>
+	
+	<br>	<br>
+
+
+
+	<!-- 测试Map -->
+	<a href="testRequestMappingController/testMap">testMap</a>
+	
+	<br>	<br>
+
+	
+	<!-- 测试ModelAndView -->
 	<a href="testRequestMappingController/testModelAndView">testModelAndView</a>
 	
-	
+	<br>	<br>
 	
 	
 	<!-- 测试servlet原生态api -->

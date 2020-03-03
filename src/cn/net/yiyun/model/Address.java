@@ -1,4 +1,4 @@
-package cn.net.yiyun.handler;
+package cn.net.yiyun.model;
 
 public class Address {
 	

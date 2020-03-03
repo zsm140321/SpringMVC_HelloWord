@@ -1,4 +1,4 @@
-package cn.net.yiyun.handler;
+package cn.net.yiyun.model;
 
 public class User {
 
@@ -30,10 +30,14 @@ public class User {
 	public void setAddress(Address address) {
 		this.address = address;
 	}
-	@Override
-	public String toString() {
-		return "User [name=" + name + ", username=" + username + ", password=" + password + ", address=" + address
-				+ "]";
+
+	public User(String name, String username, String password) {
+		super();
+		this.name = name;
+		this.username = username;
+		this.password = password;
+	}
+	public User() {
 	}
 	
 }
