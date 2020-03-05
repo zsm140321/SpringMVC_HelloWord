@@ -9,19 +9,13 @@
 <body>
 	<h1>成功了</h1>
 
-	date :<a> ${date}</a>
-    name :<a>${name}</a>
-	<br>
-	<br>
-	<br>
+
 	<!-- 测试testSessionAttribute -->
-	   <a> ${requestScope.name}</a>
-	    <a> ${sessionScope.name}</a>
-	    <br>
-	      <a>${requestScope.user}</a>
-	   <a> ${sessionScope.user}</a>
+
 	  
 	  
+	  
+	  ${user}
 	 
 </body>
 </html>

@@ -43,7 +43,7 @@ public class TestRequestMapping {
 	public void getUser(@RequestParam(value = "id", required = false) Integer id,Map<String,Object> map) {
 
 		if (id != null) {
-			
+	
 			System.out.println(id);
 			User user = new User("zhaohsunmin", "1124609437", "qswe140321dd.");
 			
@@ -59,7 +59,7 @@ public class TestRequestMapping {
 	}
 
 	@RequestMapping("/updataUser")
-	public String updataUser(User user) {
+	public String updataUser(@ModelAttribute("user")User user) {
 
 		System.out.println("ÐÞ¸Ä²Ù×÷" + user);
 		return SUCCESS;
