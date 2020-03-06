@@ -20,46 +20,54 @@ import org.springframework.web.servlet.ModelAndView;
 
 import cn.net.yiyun.model.User;
 
-//@SessionAttributes 注解只能放到类上
-//@SessionAttributes(value = { "name", "user" })
+//SessionAttributes 注解只能放到类上
+
+@SessionAttributes(value = { "user" })
 @RequestMapping("/testRequestMappingController")
 @Controller
 public class TestRequestMapping {
 
 	private final String SUCCESS = "success";
 
+	@RequestMapping("/testRedirect")
+	public String testRedirect() {
+
+		System.out.println("testRedirect");
+		return "NewFile";
+	}
+
 	// @ModelAttribute 注解 执行任何方法前先执行标记@ModelAttribute 的方法
 	/**
-	 *   运行流程:
-	 * 1. 执行 @ModelAttribute 注解修饰的方法: 从数据库中取出对象, 把对象放入到了 Map 中. 键为: user
-	 * 2. SpringMVC 从 Map 中取出 User 对象, 并把表单的请求参数赋给该 User 对象的对应属性.
-	 * 3. SpringMVC 把上述对象传入目标方法的参数. 
+	 * 运行流程: 1. 执行 @ModelAttribute 注解修饰的方法: 从数据库中取出对象, 把对象放入到了 Map 中. 键为: user 2.
+	 * SpringMVC 从 Map 中取出 User 对象, 并把表单的请求参数赋给该 User 对象的对应属性. 3. SpringMVC
+	 * 把上述对象传入目标方法的参数.
 	 * 
 	 * 注意: 在 @ModelAttribute 修饰的方法中, 放入到 Map 时的键需要和目标方法入参类型的第一个字母小写的字符串一致!
+	 * 
 	 * @param id
 	 * @param map
 	 */
 	@ModelAttribute
-	public void getUser(@RequestParam(value = "id", required = false) Integer id,Map<String,Object> map) {
+	public void getUser(@RequestParam(value = "id", required = false) Integer id, Map<String, Object> map) {
 
 		if (id != null) {
-	
+
 			System.out.println(id);
 			User user = new User("zhaohsunmin", "1124609437", "qswe140321dd.");
-			
+
 			System.out.println("@ModelAttribute");
-		   /**
-		    * 注意 @ModelAttribute 修饰的方法中, 放入到 Map 时的键需要和目标方法入参类型的第一个字母小写的字符串一致!
-		    */
+			/**
+			 * 注意 @ModelAttribute 修饰的方法中, 放入到 Map 时的键需要和目标方法入参类型的第一个字母小写的字符串一致!
+			 */
 			map.put("user", user);
-			
+
 			System.out.println(user);
 		}
 
 	}
 
 	@RequestMapping("/updataUser")
-	public String updataUser(@ModelAttribute("user")User user) {
+	public String updataUser(@ModelAttribute("user") User user) {
 
 		System.out.println("修改操作" + user);
 		return SUCCESS;

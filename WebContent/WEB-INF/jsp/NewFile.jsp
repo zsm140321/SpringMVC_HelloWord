@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8" isErrorPage="true"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,15 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>成功了</h1>
-
-
-	<!-- 测试testSessionAttribute -->
-
-	  
-	  
-	  
-	  ${sessionScope.user}
-	 
+NewFile.jsp
 </body>
 </html>

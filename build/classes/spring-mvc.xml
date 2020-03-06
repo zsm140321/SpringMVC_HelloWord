@@ -22,6 +22,10 @@
 	</bean>
 
 
-    
+	<!-- mvc:view-controller可以直接请求目标页面 不需要 经过handler path 和 view-name属性的值是 需要跳转的页面的名字 
+		并且必须配置 mvc:annotation-driven 否则controller会404 -->
+	<mvc:view-controller path="/success"
+		view-name="success" />
+	<mvc:annotation-driven></mvc:annotation-driven>
 
 </beans>
